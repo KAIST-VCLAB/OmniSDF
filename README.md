@@ -19,7 +19,7 @@ This repository is the official implementation of the paper **OmniSDF: OmniSDF: 
 > * CUDA toolkit ver. >=12.0
 
 ## Dataset convention
-We provide synthetic [dataset]() for the demo.
+We provide synthetic [dataset](https://drive.google.com/file/d/1YChMCvrgfMxODpWl7qGukXzu58rr4B6x/view?usp=drive_link) for the demo.
 Unzip files in ```./data/input_video```.   
 Input data are organized as follow
 ```
