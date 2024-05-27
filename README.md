@@ -20,36 +20,45 @@ This repository is the official implementation of the paper **OmniSDF: OmniSDF: 
 
 ## Dataset convention
 We provide synthetic [dataset](https://drive.google.com/file/d/1YChMCvrgfMxODpWl7qGukXzu58rr4B6x/view?usp=drive_link) for the demo.
-Unzip files in ```./data/input_video```.   
-Input data are organized as follow
+Input data are organized as follow;
 ```
-<scene_name>
-|-- idepth              # Inverse depth extracted from pretrained network
-    |-- 0.exr
-    |-- 1.exr
-    ...
-|-- traj.csv            # Camera-to-world matrix
-|-- video.mp4           # Egocentric RGB video
-|-- mask_img.png        # Mask image to mask out camera stick
+input_video
+|--<scene_name>
+   |-- idepth              # Inverse depth extracted from pretrained network
+       |-- 0.exr
+       |-- 1.exr
+       ...
+   |-- traj.csv            # Camera-to-world matrix
+   |-- video.mp4           # Egocentric RGB video
+   |-- mask_img.png        # Mask image to mask out camera stick
 
 ```
+Download and unzip files in ```./dataset``` before running the demo.
 
 ## Installation
+
 Setup environment by building docker image
 
 ```
 cd env
-sh docker_build.sh
+docker build --build-arg PHYSICAL_UID=$(id -u) --build-arg PHYSICAL_GID=$(id -g) -t omnisdf:1.0 .
+cd ../
 ```
 
 Run docker container
 
 ```
 docker run -d --gpus '"device=0"' -w /code/src/ \
--v $(pwd)/data:/data \
+-v $(pwd)/dataset:/data \
 -v $(pwd):/code/src \
 --name omnisdf \
 -it omnisdf:1.0
+```
+
+Start interacting with the running container
+
+```
+docker exec -it omnisdf /bin/bash
 ```
 
 Build custom CUDA library for binoctree by running below code inside the docker container.

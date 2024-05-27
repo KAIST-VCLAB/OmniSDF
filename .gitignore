@@ -1,0 +1,5 @@
+*.pyc
+binoctree/clib/build
+binoctree/clib/dist
+binoctree/clib/octree_clib.egg-info
+dataset
