@@ -14,7 +14,8 @@ This repository is the official implementation of the paper **OmniSDF: OmniSDF: 
 ![teaser](assets/teaser.png)
 
 ## Tested Environments
-> * OS  :  Ubuntu 20.04.5 LTS   
+> * OS  : Ubuntu 20.04.5 LTS   
+> * CPU : Intel(R) Xeon(R) Silver 4214R CPU @ 2.40GHz
 > * GPU : NVIDIA RTX A6000
 > * CUDA toolkit ver. >=12.0
 
