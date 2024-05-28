@@ -66,6 +66,7 @@ Build custom CUDA library for binoctree by running below code inside the docker 
 ```
 cd binoctree/clib
 python3 setup.py clean --all install
+cd ../../
 ```
  
 
